@@ -31,3 +31,6 @@
 ## Lệnh
 - Generate code:
 `fvm flutter packages pub run build_runner build --delete-conflicting-outputs`
+
+## Môi trường
+Flutter 3.3.2
