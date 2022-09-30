@@ -1,0 +1,20 @@
+{
+    "contract_info": "Thông tin hợp đồng",
+    "contract": "Hợp đồng",
+    "vi": "Tiếng Việt",
+    "en": "Tiếng Anh",
+    "hello": "Xin chào",
+    "goodbye": "Tạm biệt",
+
+
+
+
+
+
+
+
+
+
+
+    "END-JSON": "Lí do: key-value cuối cùng không được dùng dấu phẩy (,)"
+}

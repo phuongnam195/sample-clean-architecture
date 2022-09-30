@@ -1,11 +1,14 @@
 class Assets {
-  static const String _imagePath = 'assets/images';
-  static const String _iconPath = 'assets/icons';
+  Assets._();
+
+  static const String imagePath = 'assets/images';
+  static const String iconPath = 'assets/icons';
+  static const String langPath = 'assets/lang';
 
   // General
-  static const String logo = '$_imagePath/logo.svg';
+  static const String logo = '$imagePath/logo.svg';
   // other images
 
   // Greeting
-  static const String icWaveHand = '$_iconPath/ic_wave_hand.png';
+  static const String icWaveHand = '$iconPath/ic_wave_hand.png';
 }

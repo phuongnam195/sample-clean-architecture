@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
 class LoadingOverlay extends StatelessWidget {
@@ -19,12 +20,12 @@ class LoadingOverlay extends StatelessWidget {
             color: Colors.black26,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
-              children: const [
-                CircularProgressIndicator(),
-                SizedBox(height: 20),
+              children: [
+                const CircularProgressIndicator(),
+                const SizedBox(height: 20),
                 Text(
-                  'HELLO WORLD',
-                  style: TextStyle(
+                  'hello'.tr().toUpperCase(),
+                  style: const TextStyle(
                     fontSize: 36,
                     fontWeight: FontWeight.w500,
                     color: Colors.white,

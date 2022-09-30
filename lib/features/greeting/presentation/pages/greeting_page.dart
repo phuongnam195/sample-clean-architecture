@@ -1,9 +1,12 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:sample_clean_arch/core/constants/enums.dart';
+import 'package:sample_clean_arch/core/utils/navigation/routes.dart';
 import 'package:sample_clean_arch/core/widgets/loading_overlay.dart';
 import 'package:sample_clean_arch/core/utils/extensions/date_time_ext.dart';
 
+import '../widgets/change_language_button.dart';
 import '../stores/greeting_store.dart';
 
 class GreetingArguments {
@@ -13,7 +16,9 @@ class GreetingArguments {
 }
 
 class GreetingPage extends StatefulWidget {
-  const GreetingPage({Key? key}) : super(key: key);
+  const GreetingPage({this.arguments, Key? key}) : super(key: key);
+
+  final GreetingArguments? arguments;
 
   @override
   State<GreetingPage> createState() => _GreetingPageState();
@@ -36,24 +41,41 @@ class _GreetingPageState extends State<GreetingPage> {
         return LoadingOverlay(
             isLoading: _store.isLoading,
             child: Scaffold(
+              appBar: AppBar(actions: [
+                ChangeLanguageButton(context),
+              ]),
               body: entity == null
                   ? Container()
                   : SingleChildScrollView(
                       child: Column(
                       children: [
-                        const SizedBox(height: 80),
+                        Text(
+                          'contract_info'.tr(),
+                          style: const TextStyle(fontSize: 30, fontWeight: FontWeight.w500),
+                        ),
                         ListTile(
                           title: Text(entity.contractInfo?.contractName ?? ''),
                           subtitle: Text(entity.contractInfo?.expiredDate?.formatDate() ?? ''),
                           tileColor: Colors.amber,
                         ),
-                        const SizedBox(height: 25),
+                        const SizedBox(height: 20),
+                        Text(
+                          'contract'.tr(),
+                          style: const TextStyle(fontSize: 30, fontWeight: FontWeight.w500),
+                        ),
+                        const SizedBox(height: 10),
                         for (var page in entity.pdfPages)
                           SizedBox(
                             width: page.orientation == PdfPageOrientation.portrait ? 150 : 200,
                             height: page.orientation == PdfPageOrientation.portrait ? 200 : 150,
                             child: Text(page.content ?? ''),
-                          )
+                          ),
+                        ElevatedButton(
+                          child: Text('goodbye'.tr()),
+                          onPressed: () {
+                            Navigator.of(context).pushNamed(Routes.goodbye);
+                          },
+                        )
                       ],
                     )),
             ));

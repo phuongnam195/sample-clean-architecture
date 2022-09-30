@@ -1,5 +1,5 @@
 name: sample_clean_arch
-description: A new Flutter project.
+description: Flutter sample clean architecture for TIKI.
 publish_to: 'none'
 
 version: 1.0.0+1
@@ -33,3 +33,7 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
+  assets:
+    - assets/icons/
+    - assets/images/
+    - assets/lang/
