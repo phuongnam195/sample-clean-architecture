@@ -16,7 +16,7 @@
 | [utils/utilities.dart](lib/core/utils/utilities.dart) | Chứa các hàm hỗ trợ không biết đặt vào thư mục nào* |
 | [widgets](lib/core/widgets) | Các widget dùng chung |
 
-\* Có thể thêm thư mục khác trong [utils](lib/core/utils)
+\* Có thể thêm thư mục khác vào [utils](lib/core/utils)
 
 ### 2. Thư mục FEATURES
 - Chứa các tính năng của app được thiết kế theo 3 tầng: data, domain, presentation
