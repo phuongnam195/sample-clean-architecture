@@ -24,6 +24,10 @@
 ### 3. Tập tin [injection_container.dart](lib/injection_container.dart)
 - Đăng ký singleton instance cho các class (usecase, repository, data source)
 
+### 4. Thư mục EXTERNAL (có thể xóa)
+- Chứa các lớp, hàm không cần triển khai trong mã nguồn.
+- Những lớp, hàm này sẽ được import từ thư viện bên ngoài: dsb_core,...
+
 ## Lệnh
 - Generate code:
 `fvm flutter packages pub run build_runner build --delete-conflicting-outputs`
