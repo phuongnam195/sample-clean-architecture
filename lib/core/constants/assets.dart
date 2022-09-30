@@ -6,9 +6,9 @@ class Assets {
   static const String langPath = 'assets/lang';
 
   // General
-  static const String logo = '$imagePath/logo.svg';
+  static const String logo = '$imagePath/logo.png';
   // other images
 
   // Greeting
-  static const String icWaveHand = '$iconPath/ic_wave_hand.png';
+  static const String icWaveHand = '$iconPath/ic_wave_hand.svg';
 }
