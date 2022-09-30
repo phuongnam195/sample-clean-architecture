@@ -3,7 +3,7 @@ class Assets {
 
   static const String imagePath = 'assets/images';
   static const String iconPath = 'assets/icons';
-  static const String langPath = 'assets/lang';
+  static const String langPath = 'assets/langs';
 
   // General
   static const String logo = '$imagePath/logo.png';
