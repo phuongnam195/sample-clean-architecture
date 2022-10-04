@@ -1,11 +1,14 @@
+import 'package:adaptive_theme/adaptive_theme.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:sample_clean_arch/core/constants/enums.dart';
+import 'package:sample_clean_arch/core/resource/app_colors.dart';
 import 'package:sample_clean_arch/core/utils/navigation/routes.dart';
 import 'package:sample_clean_arch/core/widgets/loading_overlay.dart';
 import 'package:sample_clean_arch/core/utils/extensions/date_time_ext.dart';
 
+import '../widgets/change_theme_button.dart';
 import '../widgets/change_language_button.dart';
 import '../stores/greeting_store.dart';
 
@@ -42,6 +45,7 @@ class _GreetingPageState extends State<GreetingPage> {
             isLoading: _store.isLoading,
             child: Scaffold(
               appBar: AppBar(actions: [
+                const ChangeThemeButton(),
                 ChangeLanguageButton(context),
               ]),
               body: entity == null
@@ -56,7 +60,7 @@ class _GreetingPageState extends State<GreetingPage> {
                         ListTile(
                           title: Text(entity.contractInfo?.contractName ?? ''),
                           subtitle: Text(entity.contractInfo?.expiredDate?.formatDate() ?? ''),
-                          tileColor: Colors.amber,
+                          tileColor: AdaptiveTheme.of(context).theme.primaryColor,
                         ),
                         const SizedBox(height: 20),
                         Text(
@@ -71,6 +75,7 @@ class _GreetingPageState extends State<GreetingPage> {
                             child: Text(page.content ?? ''),
                           ),
                         ElevatedButton(
+                          style: ElevatedButton.styleFrom(backgroundColor: AppColors.of(context)?.chartColor),
                           child: Text('goodbye'.tr()),
                           onPressed: () {
                             Navigator.of(context).pushNamed(Routes.goodbye);

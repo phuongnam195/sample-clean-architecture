@@ -1,7 +1,9 @@
+import 'package:adaptive_theme/adaptive_theme.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:sample_clean_arch/core/constants/assets.dart';
 import 'package:sample_clean_arch/core/network/language/language.dart';
+import 'package:sample_clean_arch/core/resource/app_theme_data.dart';
 import 'package:sample_clean_arch/core/utils/navigation/routes.dart';
 import 'package:sample_clean_arch/injection_container.dart' as di;
 
@@ -28,16 +30,21 @@ class App extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Sample Clean Architecture',
-      theme: ThemeData(
-        primaryColor: Colors.green.shade800,
+    return AdaptiveTheme(
+      light: AppThemeData.light(),
+      dark: AppThemeData.dark(),
+      initial: AdaptiveThemeMode.system,
+      builder: (theme, darkTheme) => MaterialApp(
+        title: 'Sample Clean Architecture',
+        theme: theme,
+        darkTheme: darkTheme,
+        localizationsDelegates: context.localizationDelegates,
+        supportedLocales: context.supportedLocales,
+        locale: context.locale,
+        routes: Routes.routes,
+        initialRoute: Routes.greeting,
+        debugShowCheckedModeBanner: false,
       ),
-      localizationsDelegates: context.localizationDelegates,
-      supportedLocales: context.supportedLocales,
-      locale: context.locale,
-      routes: Routes.routes,
-      initialRoute: Routes.greeting,
     );
   }
 }

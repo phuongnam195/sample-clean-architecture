@@ -1,7 +1,9 @@
+import 'package:adaptive_theme/adaptive_theme.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
 import '../widgets/change_language_button.dart';
+import '../widgets/change_theme_button.dart';
 
 class GoodbyeArguments {
   GoodbyeArguments();
@@ -18,6 +20,7 @@ class GoodbyePage extends StatelessWidget {
       appBar: AppBar(
         title: Text('goodbye'.tr()),
         actions: [
+          const ChangeThemeButton(),
           ChangeLanguageButton(context),
         ],
       ),
