@@ -1,9 +1,11 @@
 import 'package:adaptive_theme/adaptive_theme.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:sample_clean_arch/core/constants/assets.dart';
-import 'package:sample_clean_arch/core/network/language/language.dart';
+import 'package:sample_clean_arch/core/constants/language.dart';
 import 'package:sample_clean_arch/core/resource/app_theme_data.dart';
+import 'package:sample_clean_arch/core/utils/log/provider_logger.dart';
 import 'package:sample_clean_arch/core/utils/navigation/routes.dart';
 import 'package:sample_clean_arch/injection_container.dart' as di;
 
@@ -12,16 +14,19 @@ void main() async {
   await di.setupLocator();
   await EasyLocalization.ensureInitialized();
 
-  runApp(EasyLocalization(
-    supportedLocales: [
-      Language.vi.locale,
-      Language.en.locale,
-    ],
-    path: Assets.langPath,
-    fallbackLocale: Language.vi.locale,
-    useOnlyLangCode: true,
-    saveLocale: true,
-    child: const App(),
+  runApp(ProviderScope(
+    observers: const [ProviderLogger()],
+    child: EasyLocalization(
+      supportedLocales: [
+        Language.vi.locale,
+        Language.en.locale,
+      ],
+      path: Assets.langPath,
+      fallbackLocale: Language.vi.locale,
+      useOnlyLangCode: true,
+      saveLocale: true,
+      child: const App(),
+    ),
   ));
 }
 

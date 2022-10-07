@@ -1,6 +1,6 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'package:sample_clean_arch/core/network/language/language.dart';
+import 'package:sample_clean_arch/core/constants/language.dart';
 
 class ChangeLanguageButton extends StatelessWidget {
   final BuildContext parentContext;

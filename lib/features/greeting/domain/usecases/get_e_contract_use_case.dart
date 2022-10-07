@@ -12,6 +12,7 @@ class GetEContractUseCase extends UseCase<EContractEntity, Params> {
 
   @override
   Future<Either<Failure, EContractEntity>> call(Params params) async {
+    return Left(ServerFailure.nullData());
     return await repository.getEContract("lfvn", params.id);
   }
 }

@@ -1,3 +1,5 @@
+// Config default colors from Material ThemeData
+
 import 'package:flutter/material.dart';
 import 'package:sample_clean_arch/core/resource/app_colors.dart';
 
