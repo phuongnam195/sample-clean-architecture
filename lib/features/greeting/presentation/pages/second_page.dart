@@ -1,4 +1,4 @@
-import 'package:easy_localization/easy_localization.dart';
+import 'package:sample_clean_arch/core/utils/extensions/string_ext.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:sample_clean_arch/features/greeting/presentation/provider/second_provider.dart';
@@ -19,7 +19,7 @@ class SecondPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('goodbye'.tr()),
+        title: Text('goodbye'.translate),
         actions: [
           const ChangeThemeButton(),
           ChangeLanguageButton(context),

@@ -1,5 +1,5 @@
 import 'package:adaptive_theme/adaptive_theme.dart';
-import 'package:easy_localization/easy_localization.dart';
+import 'package:sample_clean_arch/core/utils/extensions/string_ext.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:sample_clean_arch/core/constants/enums.dart';
@@ -56,7 +56,7 @@ class FirstPage extends ConsumerWidget {
                 child: Column(
                   children: [
                     Text(
-                      'contract_info'.tr(),
+                      'contract_info'.translate,
                       style: const TextStyle(fontSize: 30, fontWeight: FontWeight.w500),
                     ),
                     ListTile(
@@ -66,7 +66,7 @@ class FirstPage extends ConsumerWidget {
                     ),
                     const SizedBox(height: 20),
                     Text(
-                      'contract'.tr(),
+                      'contract'.translate,
                       style: const TextStyle(fontSize: 30, fontWeight: FontWeight.w500),
                     ),
                     const SizedBox(height: 10),
@@ -78,7 +78,7 @@ class FirstPage extends ConsumerWidget {
                       ),
                     ElevatedButton(
                       style: ElevatedButton.styleFrom(backgroundColor: AppColors.of(context)?.chartColor),
-                      child: Text('goodbye'.tr()),
+                      child: Text('goodbye'.translate),
                       onPressed: () {
                         Navigator.of(context).pushNamed(Routes.goodbye);
                       },

@@ -1,4 +1,4 @@
-import 'package:easy_localization/easy_localization.dart';
+import 'package:sample_clean_arch/core/utils/extensions/string_ext.dart';
 import 'package:flutter/material.dart';
 
 class LoadingContainer extends StatelessWidget {
@@ -24,7 +24,7 @@ class LoadingContainer extends StatelessWidget {
                 const CircularProgressIndicator(),
                 const SizedBox(height: 20),
                 Text(
-                  'hello'.tr().toUpperCase(),
+                  'hello'.translate.toUpperCase(),
                   style: const TextStyle(
                     fontSize: 36,
                     fontWeight: FontWeight.w500,

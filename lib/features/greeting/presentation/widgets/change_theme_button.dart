@@ -1,5 +1,5 @@
 import 'package:adaptive_theme/adaptive_theme.dart';
-import 'package:easy_localization/easy_localization.dart';
+import 'package:sample_clean_arch/core/utils/extensions/string_ext.dart';
 import 'package:flutter/material.dart';
 
 class ChangeThemeButton extends StatelessWidget {
@@ -8,9 +8,9 @@ class ChangeThemeButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     List<String> themes = [
-      'light'.tr(),
-      'dark'.tr(),
-      'system'.tr(),
+      'light'.translate,
+      'dark'.translate,
+      'system'.translate,
     ];
 
     return PopupMenuButton<int>(
